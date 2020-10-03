@@ -2,7 +2,7 @@ function calc(){
 	var mbti,ei,sn,tf,jp;
 	var e=0,i=0,s=0,n=0,t=0,f=0,j=0,p=0;
 	
-	for (var k=1;k<4;k++){
+	for (var k=1;k<11;k++){
 		var a = $(':radio[name="q'+k+'"]:checked').val();
 		if (!a){
 			alert('모든 항목에 답변해주세요 :)');
@@ -91,6 +91,17 @@ function compare(a){
 	} else {
 		$('.char').text('아직 정확히 일치하는 캐릭터가 입력되지 않았습니다!');
 	}
-		
+	
+	$('.test').text(a);		
+	
 	console.log(result);
+}
+
+function rand(){
+	for(var i=1;i<11;i++){
+		for(var j=0;j<3;j++){
+			var r = Math.ceil(Math.random()*3);
+			$(':radio[id="q'+i+r+'"]').prop("checked", true);
+		}
+	}
 }
